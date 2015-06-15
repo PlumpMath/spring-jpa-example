@@ -41,7 +41,7 @@ public class ExampleTest {
 
     Assert.assertEquals("Should have one entity saved.", 1, entities.size());
 
-    Assert.assertEquals("Entity saved should be the one saved.", "test", entities.get(0)
+    Assert.assertEquals("Entity fetched should be the one saved.", "test", entities.get(0)
         .getDescription());
   }
 
