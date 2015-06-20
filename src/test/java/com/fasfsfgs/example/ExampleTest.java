@@ -11,10 +11,10 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.fasfsfgs.SpringTestConfig;
 import com.fasfsfgs.example.business.GetEntity01;
 import com.fasfsfgs.example.business.SaveEntity01;
 import com.fasfsfgs.example.entity.Entity01;
-import com.fasfsfgs.infra.config.SpringTestConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SpringTestConfig.class)

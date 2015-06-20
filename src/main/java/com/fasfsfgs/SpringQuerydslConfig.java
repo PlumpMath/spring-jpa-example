@@ -1,4 +1,4 @@
-package com.fasfsfgs.infra.config;
+package com.fasfsfgs;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

@@ -1,8 +1,7 @@
-package com.fasfsfgs.infra.config;
+package com.fasfsfgs;
 
 import java.util.Properties;
 
-import javax.annotation.Nullable;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -16,13 +15,11 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.fasfsfgs.example.business._BusinessPackage;
-import com.fasfsfgs.example.dao._DAOPackage;
-import com.fasfsfgs.example.entity._EntityPackage;
+import com.fasfsfgs.example.entity.Entity01;
 
 @Configuration
 @Import(SpringQuerydslConfig.class)
-@ComponentScan(basePackageClasses = {_DAOPackage.class, _BusinessPackage.class})
+@ComponentScan
 @EnableTransactionManagement
 public abstract class SpringCommonConfig {
 
@@ -34,7 +31,7 @@ public abstract class SpringCommonConfig {
       final DataSource ds) {
     LocalContainerEntityManagerFactoryBean lcemfb = new LocalContainerEntityManagerFactoryBean();
     lcemfb.setDataSource(ds);
-    lcemfb.setPackagesToScan(_EntityPackage.class.getPackage().getName());
+    lcemfb.setPackagesToScan(Entity01.class.getPackage().getName());
     lcemfb.setJpaProperties(getJPAProperties());
 
     HibernateJpaVendorAdapter hjva = new HibernateJpaVendorAdapter();
@@ -53,7 +50,6 @@ public abstract class SpringCommonConfig {
     return properties;
   }
 
-  @Nullable
   protected Properties getJPACustomProperties() {
     return null;
   }
