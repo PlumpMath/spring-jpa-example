@@ -4,33 +4,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import com.fasfsfgs.example.entity.Entity01;
 import com.fasfsfgs.example.entity.QEntity01;
-import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
 @Named
-public class Entity01DAO {
+public class Entity01DAO extends AbstractDAO<Entity01> {
 
   @Inject
   private JPAQueryFactory jpaQueryFactory;
 
-  @PersistenceContext
-  private EntityManager entityManager;
-
-  public List<Entity01> getAll() {
+  public List<Entity01> getActive() {
     QEntity01 entity01 = QEntity01.entity01;
-
-    JPAQuery<Entity01> query = jpaQueryFactory.selectFrom(entity01);
-
-    return query.fetch();
-  }
-
-  public void save(Entity01 entity01) {
-    entityManager.persist(entity01);
+    return jpaQueryFactory.selectFrom(entity01).where(entity01.active.isTrue()).fetch();
   }
 
 }

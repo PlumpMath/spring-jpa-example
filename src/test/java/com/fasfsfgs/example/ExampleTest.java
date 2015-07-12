@@ -1,11 +1,13 @@
 package com.fasfsfgs.example;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -29,19 +31,28 @@ public class ExampleTest {
   @Test
   @Transactional
   public void test() {
-    List<Entity01> entities = getEntity01.get();
+    List<Entity01> entitiesBefore = getEntity01.get();
 
-    Assert.assertTrue("Should have no entities saved.", entities.isEmpty());
+    assertTrue("Should have no entities saved.", entitiesBefore.isEmpty());
 
-    Entity01 newEntity = new Entity01();
-    newEntity.setDescription("test");
-    saveEntity01.save(newEntity);
+    Entity01 newEntityA = new Entity01();
+    newEntityA.setDescription("A test");
+    newEntityA.setActive(true);
+    saveEntity01.save(newEntityA);
 
-    entities = getEntity01.get();
+    Entity01 newEntityB = new Entity01();
+    newEntityB.setDescription("B test");
+    newEntityB.setActive(false);
+    saveEntity01.save(newEntityB);
 
-    Assert.assertEquals("Should have one entity saved.", 1, entities.size());
+    List<Entity01> entitiesAfter = getEntity01.get();
 
-    Assert.assertEquals("Entity fetched should be the one saved.", "test", entities.get(0)
+    assertEquals("Should have two entities saved.", 2, entitiesAfter.size());
+
+    List<Entity01> activeEntities = getEntity01.getActive();
+
+    assertEquals("Should have only one active entity.", 1, activeEntities.size());
+    assertEquals("Active entity fetched should be A test.", "A test", activeEntities.get(0)
         .getDescription());
   }
 

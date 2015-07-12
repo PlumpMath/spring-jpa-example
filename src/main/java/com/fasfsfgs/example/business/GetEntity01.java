@@ -18,4 +18,8 @@ public class GetEntity01 {
     return entity01DAO.getAll();
   }
 
+  public List<Entity01> getActive() {
+    return entity01DAO.getActive();
+  }
+
 }

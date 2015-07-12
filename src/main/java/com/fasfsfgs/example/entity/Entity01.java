@@ -19,6 +19,9 @@ public class Entity01 {
   @Column(name = "description", nullable = false)
   private String description;
 
+  @Column(name = "active", nullable = false)
+  private boolean active;
+
   public Integer getId() {
     return id;
   }
@@ -33,6 +36,14 @@ public class Entity01 {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public boolean isActive() {
+    return active;
+  }
+
+  public void setActive(boolean active) {
+    this.active = active;
   }
 
 }
