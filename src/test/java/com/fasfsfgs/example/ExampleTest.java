@@ -52,8 +52,8 @@ public class ExampleTest {
     List<Entity01> activeEntities = getEntity01.getActive();
 
     assertEquals("Should have only one active entity.", 1, activeEntities.size());
-    assertEquals("Active entity fetched should be A test.", "A test", activeEntities.get(0)
-        .getDescription());
+    assertEquals("Active entity fetched should be A test.", "A test",
+        activeEntities.get(0).getDescription());
   }
 
 }
