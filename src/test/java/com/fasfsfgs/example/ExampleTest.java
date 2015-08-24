@@ -3,6 +3,7 @@ package com.fasfsfgs.example;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -38,10 +39,12 @@ public class ExampleTest {
     Entity01 newEntityA = new Entity01();
     newEntityA.setDescription("A test");
     newEntityA.setActive(true);
+    newEntityA.setRegistryDate(LocalDateTime.now());
     saveEntity01.save(newEntityA);
 
     Entity01 newEntityB = new Entity01();
     newEntityB.setDescription("B test");
+    newEntityB.setRegistryDate(LocalDateTime.now());
     newEntityB.setActive(false);
     saveEntity01.save(newEntityB);
 

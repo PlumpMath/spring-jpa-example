@@ -1,5 +1,7 @@
 package com.fasfsfgs.example.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +21,9 @@ public class Entity01 {
   @Column(name = "description", nullable = false)
   private String description;
 
+  @Column(name = "registryDate", nullable = false)
+  private LocalDateTime registryDate;
+
   @Column(name = "active", nullable = false)
   private boolean active;
 
@@ -36,6 +41,14 @@ public class Entity01 {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public LocalDateTime getRegistryDate() {
+    return registryDate;
+  }
+
+  public void setRegistryDate(LocalDateTime registryDate) {
+    this.registryDate = registryDate;
   }
 
   public boolean isActive() {
