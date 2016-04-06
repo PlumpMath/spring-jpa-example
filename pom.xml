@@ -17,13 +17,6 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 
 		<resteasy.version>3.0.16.Final</resteasy.version>
-		<hibernate.version>5.1.0.Final</hibernate.version>
-		<querydsl.version>4.1.0</querydsl.version>
-		<commons-dbcp2.version>2.1.1</commons-dbcp2.version>
-
-		<junit.version>4.12</junit.version>
-		<mockito.version>1.10.19</mockito.version>
-		<hsqldb.version>2.3.3</hsqldb.version>
 	</properties>
 
 	<dependencyManagement>
@@ -106,39 +99,39 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
+			<version>5.1.0.Final</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
-			<version>${commons-dbcp2.version}</version>
+			<version>2.1.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-jpa</artifactId>
-			<version>${querydsl.version}</version>
+			<version>4.1.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
-			<version>${mockito.version}</version>
+			<version>1.10.19</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>${hsqldb.version}</version>
+			<version>2.3.3</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -164,19 +157,6 @@
 						</configuration>
 					</execution>
 				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>com.querydsl</groupId>
-						<artifactId>querydsl-apt</artifactId>
-						<version>${querydsl.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>com.querydsl</groupId>
-						<artifactId>querydsl-jpa</artifactId>
-						<classifier>apt</classifier>
-						<version>${querydsl.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
