@@ -27,6 +27,8 @@ public class Entity01 {
   @Column(name = "active", nullable = false)
   private boolean active;
 
+  public Entity01() {}
+
   public Integer getId() {
     return id;
   }

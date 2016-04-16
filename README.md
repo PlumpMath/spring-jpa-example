@@ -1,11 +1,9 @@
 # Spring Hibernate Querydsl Example
 
-Example application that uses Spring, Hibernate and Querydsl.
+Example app infrastructure using spring, jpa (hibernate) and jax-rs (resteasy).
 
 ## Prerequisites
 
 * [Apache Maven](http://maven.apache.org/)
 
-## Test
-
-`com.fasfsfgs.example.ExampleTest` has a test that uses an in-memory database.
+* [WildFly](http://wildfly.org/) *this project is using the container datasource for now*
