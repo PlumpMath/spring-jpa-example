@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.fasfsfgs.example.cmd.GetExpense;
+import com.fasfsfgs.example.entity.Expense;
 import com.fasfsfgs.example.to.ExpenseTO;
 
 @Named
@@ -22,7 +23,8 @@ public class ExpenseService {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public ExpenseTO test() {
-    getExpense.get();
+    Expense expenseEntity = getExpense.get();
+    System.out.println(expenseEntity);
 
     ExpenseTO expense = new ExpenseTO();
     expense.setId(1L);

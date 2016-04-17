@@ -1,6 +1,6 @@
 package com.fasfsfgs.example.entity;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +22,7 @@ public class Expense {
   private String description;
 
   @Column(name = "date", nullable = false)
-  private LocalDate date;
+  private Date date;
 
   @Column(name = "type", nullable = false)
   private Integer type;
@@ -51,11 +51,11 @@ public class Expense {
     this.description = description;
   }
 
-  public LocalDate getDate() {
+  public Date getDate() {
     return date;
   }
 
-  public void setDate(LocalDate date) {
+  public void setDate(Date date) {
     this.date = date;
   }
 

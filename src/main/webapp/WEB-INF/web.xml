@@ -35,5 +35,10 @@
 		<param-name>resteasy.servlet.mapping.prefix</param-name>
 		<param-value>/api</param-value>
 	</context-param>
-         
+
+	<persistence-unit-ref>
+		<persistence-unit-ref-name>persistence/springjpaexample-pu</persistence-unit-ref-name>
+		<persistence-unit-name>springjpaexample-pu</persistence-unit-name>
+	</persistence-unit-ref>
+
 </web-app>
