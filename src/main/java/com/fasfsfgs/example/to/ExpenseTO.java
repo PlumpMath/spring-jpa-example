@@ -1,5 +1,6 @@
 package com.fasfsfgs.example.to;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class ExpenseTO {
@@ -14,7 +15,7 @@ public class ExpenseTO {
 
   private Integer paymentSource;
 
-  private Double expenseCost;
+  private BigDecimal expenseCost;
 
   public ExpenseTO() {}
 
@@ -58,11 +59,11 @@ public class ExpenseTO {
     this.paymentSource = paymentSource;
   }
 
-  public Double getExpenseCost() {
+  public BigDecimal getExpenseCost() {
     return expenseCost;
   }
 
-  public void setExpenseCost(Double expenseCost) {
+  public void setExpenseCost(BigDecimal expenseCost) {
     this.expenseCost = expenseCost;
   }
 

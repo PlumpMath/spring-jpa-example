@@ -1,4 +1,4 @@
-# Spring Hibernate Querydsl Example
+# spring jpa example
 
 Example app infrastructure using spring, jpa (hibernate) and jax-rs (resteasy).
 

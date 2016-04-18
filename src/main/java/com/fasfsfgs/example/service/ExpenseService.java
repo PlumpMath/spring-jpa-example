@@ -1,9 +1,8 @@
 package com.fasfsfgs.example.service;
 
-import java.util.Date;
-
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -22,15 +21,22 @@ public class ExpenseService {
 
   @GET
   @Produces(MediaType.APPLICATION_JSON)
+  @Transactional
   public ExpenseTO test() {
-    Expense expenseEntity = getExpense.get();
-    System.out.println(expenseEntity);
+    Expense exampleExpense = getExpense.get();
+    System.out.println(exampleExpense);
 
-    ExpenseTO expense = new ExpenseTO();
-    expense.setId(1L);
-    expense.setDescription("expense description test");
-    expense.setDate(new Date());
-    return expense;
+    Expense expense = getExpense.save();
+
+    ExpenseTO expenseTO = new ExpenseTO();
+    expenseTO.setId(expense.getId());
+    expenseTO.setDescription(expense.getDescription());
+    expenseTO.setDate(expense.getDate());
+    expenseTO.setExpenseCost(expense.getExpenseCost());
+    expenseTO.setPaymentSource(expense.getPaymentSource());
+    expenseTO.setType(expense.getType());
+
+    return expenseTO;
   }
 
 }

@@ -1,5 +1,6 @@
 package com.fasfsfgs.example.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -31,7 +32,7 @@ public class Expense {
   private Integer paymentSource;
 
   @Column(name = "expense_cost", nullable = false)
-  private Double expenseCost;
+  private BigDecimal expenseCost;
 
   public Expense() {}
 
@@ -75,11 +76,11 @@ public class Expense {
     this.paymentSource = paymentSource;
   }
 
-  public Double getExpenseCost() {
+  public BigDecimal getExpenseCost() {
     return expenseCost;
   }
 
-  public void setExpenseCost(Double expenseCost) {
+  public void setExpenseCost(BigDecimal expenseCost) {
     this.expenseCost = expenseCost;
   }
 
