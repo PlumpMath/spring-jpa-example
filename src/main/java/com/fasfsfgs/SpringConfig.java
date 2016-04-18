@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan
+@ComponentScan("com.fasfsfgs.example")
 @EnableTransactionManagement
 public class SpringConfig {
 
